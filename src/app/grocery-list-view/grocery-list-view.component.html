@@ -1,0 +1,46 @@
+<div class="box1">
+
+
+ 
+  <div class="box2">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()" >
+    <div class="flipperBox">
+      <select size="1" formControlName="taskId">
+        <option value="" disabled selected>Select TaskId</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select> 
+      <div class="flipper-input">
+         <input class="flipper-input__input" id="input" placeholder="Buy Detergent" formControlName="task">
+         <label class="flipper-input__label" for="input">List Item</label>
+      </div> 
+        <button type="submit" class="push-button-3d" [disabled]="!postForm.valid" (click)="createNewItem()">Add</button>
+   </div>
+  </form>
+
+
+   <div class="card" >
+     <div class="list" *ngFor="let item of GroceryItem" >
+
+      <p class="ListDetails" id="task"></p>
+     
+        <div class="button">
+          <i class="fa-solid fa-trash-can bounce"></i>
+        </div>
+
+    </div>
+   </div>
+ 
+  </div>
+
+
+
+</div>
